@@ -1,9 +1,17 @@
 package com.demolambdas.example;
 
 
-public class Example7 {
+public class Example0 {
     public static void main(String[] args){
-        Operation addition = (i,j) -> i+j;
+        Operation addition = new Operation(){
+            @Override
+            public int operate(int a, int b) {
+                return a+b;
+            }
+            
+        };
+        
+        //Operation addition = (i,j) -> i+j;
         
         System.out.println("result = "+addition.operate(2, 2));
         

@@ -7,21 +7,19 @@ public class Console {
     private String name;
     private String companyName;
     private Date releaseDate;
-    private Double unitsSold;
-    private Integer generation;
+    private double unitsSold;
+    private int generation;
 
     public Console() {
     }
 
-    public Console(String name, String companyName, Date releaseDate, Double unitsSold, Integer generation) {
+    public Console(String name, String companyName, Date releaseDate, double unitsSold, int generation) {
         this.name = name;
         this.companyName = companyName;
         this.releaseDate = releaseDate;
         this.unitsSold = unitsSold;
         this.generation = generation;
     }
-    
-    
 
     public String getName() {
         return name;
@@ -47,21 +45,22 @@ public class Console {
         this.releaseDate = releaseDate;
     }
 
-    public Double getUnitsSold() {
+    public double getUnitsSold() {
         return unitsSold;
     }
 
-    public void setUnitsSold(Double unitsSold) {
+    public void setUnitsSold(double unitsSold) {
         this.unitsSold = unitsSold;
     }
 
-    public Integer getGeneration() {
+    public int getGeneration() {
         return generation;
     }
 
-    public void setGeneration(Integer generation) {
+    public void setGeneration(int generation) {
         this.generation = generation;
     }
+
     
     
 
