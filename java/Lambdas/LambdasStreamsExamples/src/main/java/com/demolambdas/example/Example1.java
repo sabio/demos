@@ -1,27 +1,29 @@
 package com.demolambdas.example;
 
-import com.demolambdas.example.beans.Console;
-import com.demolambdas.utils.Util;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
+import com.demolambdas.example.interfaces.Operation;
+import com.demolambdas.example.interfaces.OperationImpl;
 
 public class Example1 {
+    
     public static void main(String[] args){
         
-        List<Console> consoleList = Util.createConsoleList();
-        Collections.sort(consoleList, new Comparator<Console>(){
-            
+        Operation suma = new OperationImpl();
+        
+        Operation resta = new Operation(){
             @Override
-            public int compare(Console c1, Console c2) {
-                return (int) (c2.getUnitsSold() - c1.getUnitsSold());
+            public int operate(int a, int b) {
+                return a - b;
             }
-        });
+        };
         
-        Collections.sort(consoleList, (c1, c2) -> (int)(c2.getUnitsSold() - c1.getUnitsSold()) );
+        Operation multiplicacion = (int a, int b) -> { return a * b; };
         
-        Util.printConsoleList(consoleList);
+        Operation division = (a,b) ->  a/b;
+        
+        
+        System.out.println("suma = "+suma.operate(2, 2));
+        System.out.println("resta = "+resta.operate(2, 2));
+        System.out.println("multiplicacion = "+multiplicacion.operate(2, 2));
+        System.out.println("division = "+division.operate(2, 2));
     }
-    
 }

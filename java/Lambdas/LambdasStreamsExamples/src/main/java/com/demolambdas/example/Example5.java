@@ -12,20 +12,19 @@ public class Example5 {
         List<Console> consoleList = Util.createConsoleList();
         
         /*
-        List<String> nintendoConsoleNames = new ArrayList();
+        List<Console> nintendoConsoles = new ArrayList();
         for(Console c : consoleList){
             if(c.getCompanyName().equals("Nintendo")){
-                nintendoConsoleNames.add(c.getName());
+                nintendoConsoles.add(c);
             }
         }
-*/
+        */
         
-        List<String> nintendoConsoleNames = consoleList
+        List<Console> nintendoConsoles = consoleList
                                             .stream()
                                             .filter((c) -> c.getCompanyName().equals("Nintendo"))
-                                            .map((c) -> c.getName())
                                             .collect(Collectors.toList());
         
-        nintendoConsoleNames.forEach(System.out::println);
+        Util.printConsoleList(nintendoConsoles);
     }
 }

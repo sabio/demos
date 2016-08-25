@@ -12,24 +12,20 @@ public class Example6 {
         List<Console> consoleList = Util.createConsoleList();
         
         /*
-        double unitsSold = 0;
+        List<String> nintendoConsoleNames = new ArrayList();
         for(Console c : consoleList){
-            if(c.getCompanyName().equals("Microsoft")){
-                unitsSold += c.getUnitsSold();
+            if(c.getCompanyName().equals("Nintendo")){
+                nintendoConsoleNames.add(c.getName());
             }
         }
-        */
+*/
         
-        double unitsSold = consoleList
-                            .stream()
-                            .filter(c -> c.getCompanyName().equals("Microsoft"))
-                            .mapToDouble( c -> c.getUnitsSold())
-                            .sum();
+        List<String> nintendoConsoleNames = consoleList
+                                            .stream()
+                                            .filter((c) -> c.getCompanyName().equals("Nintendo"))
+                                            .map((c) -> c.getName())
+                                            .collect(Collectors.toList());
         
-        System.out.println("Units sold = "+unitsSold);
-        
-        
+        nintendoConsoleNames.forEach(System.out::println);
     }
-    
-    
 }
