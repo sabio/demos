@@ -18,7 +18,7 @@ public class Example1 {
         
         Operation multiplicacion = (int a, int b) -> { return a * b; };
         
-        Operation division = (a,b) ->  a/b;
+        Operation division = (a,b) -> a/b; 
         
         
         System.out.println("suma = "+suma.operate(2, 2));
