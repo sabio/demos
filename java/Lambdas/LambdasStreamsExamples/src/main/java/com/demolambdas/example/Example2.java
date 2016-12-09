@@ -1,27 +1,25 @@
 package com.demolambdas.example;
 
-import com.demolambdas.example.beans.Console;
-import com.demolambdas.utils.Util;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 
 public class Example2 {
     public static void main(String[] args){
         
-        List<Console> consoleList = Util.createConsoleList();
-        Collections.sort(consoleList, new Comparator<Console>(){
-            
+        int number = 100;
+        
+        Runnable r1 = new Runnable(){
             @Override
-            public int compare(Console c1, Console c2) {
-                return (int) (c2.getUnitsSold() - c1.getUnitsSold());
+            public void run() {
+                for(int i=0;i<number;i++) 
+                    System.out.println("Hello");
             }
-        });
+            
+        };
+        //Runnable r2 = () -> { for(int i=0;i<number;i++) System.out.println("World"); };
         
-        Collections.sort(consoleList, (c1, c2) -> (int)(c2.getUnitsSold() - c1.getUnitsSold()) );
+        new Thread(r1).start();
+        //new Thread(r2).start();
         
-        Util.printConsoleList(consoleList);
+        	
     }
-    
 }
+
